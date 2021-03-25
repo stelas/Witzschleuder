@@ -6,10 +6,11 @@
  */
 
 header('Content-Type: text/plain');
-if ($s = file_get_contents(__DIR__ . '/flachwitze.txt')) {
-	$a = explode("\n", $s);
-	if (($c = count($a)) > 1)
-		echo $a[mt_rand(0, $c - 1)] . "\n";
+if ($f = file(__DIR__ . '/flachwitze.txt')) {
+	if (($c = count($f)) > 1) {
+		$r = mt_rand(0, $c - 1);
+		echo $f[$r];
+	}
 }
 
 ?>
